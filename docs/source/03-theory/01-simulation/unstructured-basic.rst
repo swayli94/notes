@@ -324,7 +324,7 @@ Over-relaxed correction:
     Orthogonal term is treated implicitly, whereas the cross diffusion term is treated as 
     a source term in a deferred correction approach.
     Over-relaxed approach is preferred, because the coefficient of the implicit term is 
-    greater than that of other methods, and it increases with the skew angle :math:`\theta\`. 
+    greater than that of other methods, and it increases with the skew angle :math:`\theta`. 
     Thus, the diagonal dominance of the coefficient matrix is enhanced.
 
 

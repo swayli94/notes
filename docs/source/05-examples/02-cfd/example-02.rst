@@ -13,7 +13,8 @@
 - 一阶空间离散 (ROE 格式)
 - 无边界条件
 
-一维 Euler 方程非定常流动的时间推进方程 (:eq:`implicit-dual-step-eqn`) 可写作:
+一维 Euler 方程非定常流动的时间推进方程 (:eq:`implicit-dual-step-eqn`) 可写作
+:eq:`implicit-dual-step-eqn-1d`:
 
 .. math::
     \left[
@@ -22,7 +23,6 @@
     = \frac{\phi     \Delta x}{\Delta t} ( \mathbf{U}^{n} - \mathbf{U}^{n-1} )
     - \frac{(1+\phi) \Delta x}{\Delta t} ( \mathbf{U}^{(m)}-\mathbf{U}^{n} )
     + \mathbf{R}(\mathbf{U}^{(m)})
-    :label: implicit-dual-step-eqn-1d
 
 其中, :math:`\phi=0.5` 时时间方向为二阶精度, :math:`\phi=0` 时为一阶精度。
 :math:`\sigma_A = (1+\varepsilon)|\lambda|_{\text{max}, A_i}`, 
@@ -30,19 +30,17 @@
 残差项 :math:`\mathbf{R}(\mathbf{U}^{(m)})` 
 计算方法与显式时间推进中的处理方法相同 (式 :eq:`euler-1d-c-discrete`)。 
 
-**L 块向前扫描运算:**
+**L 块向前扫描运算:** (:eq:`lu-sgs-sweep-l`)
 
 .. math::
     \Delta \mathbf{U}^*_i = \frac{ \text{RHS}^{(m)} + (A^{+} \Delta \mathbf{U})_{i-1}^{(m)} }
     { \frac{\Delta x}{\Delta \tau} + \frac{(1+\phi)\Delta x}{\Delta t} + \sigma_A }
-    :label: lu-sgs-sweep-l
 
-**U 块向后扫描运算:**
+**U 块向后扫描运算:** (:eq:`lu-sgs-sweep-r`)
 
 .. math::
     \Delta \mathbf{U}^{(m)}_i = \Delta \mathbf{U}^*_i - \frac{ (A^{-} \Delta \mathbf{U})_{i+1}^{(m)}}
     {\frac{\Delta x}{\Delta \tau} + \frac{(1+\phi)\Delta x}{\Delta t} + \sigma_A}
-    :label: lu-sgs-sweep-r
 
 
 (2) 代码示例
