@@ -50,6 +50,10 @@ Groups 类似于文件夹, Datasets 类似于数组。
 
 python 库 `h5py <https://github.com/h5py/h5py>`_ 可以用于读写 HDF5 文件。
 
+.. note::
+    CGNS now supports two output types: HDF5 and the Advanced Data Format (ADF) format. 
+    While HDF5 is the officially supported format, its compatibility with other tools is sparse. 
+
 
 (3) 数据结构
 --------------------------------------

@@ -15,7 +15,7 @@ storage and retrieval of computational fluid dynamics (CFD) analysis data.
 .. code-block:: bash
    :linenos:
    
-   # unzip in the package direcotry, e.g., $HOME/opt/
+   # unzip in the package directory, e.g., $HOME/opt/
    cd ~/opt/
    wget https://github.com/CGNS/CGNS/archive/v4.1.2.tar.gz
    tar -xvaf v4.1.2.tar.gz
@@ -46,37 +46,35 @@ Python CGNS 接口：
 安装 CGNS 工具 (Optional)
 ------------------------------
 
-The CGNS Library comes with a set of tools to view and edit CGNS files manually. 
-To install these tools, use the flag ``-D CGNS_BUILD_CGNSTOOLS=ON`` during 
-the configure step. Note that these tools should be installed on a local computer 
-and not on a cluster.
-
-To enable this option you may need to install the following packages:
+CGNS 提供了一系列在本地（非集群）查看、编辑 CGNS 文件的工具，需要先安装以下包，再配置 CGNS
 
 .. code-block:: bash
 
    sudo apt-get install libxmu-dev libxi-dev
 
-CGNS library sometimes complains about missing includes and libraries. 
-Most of the time this is either Tk/TCL or OpenGL. This can be solved by 
-installing the following packages. Note that the version of these libraries 
-might be different on your machine:
-
-.. code-block:: bash
-
    sudo apt-get install freeglut3
    sudo apt-get install tk8.6-dev
-
-If needed, install the following package as well:
-
-.. code-block:: bash
-
    sudo apt-get install freeglut3-dev
 
-If you compiled with ``-D CGNS_BUILD_CGNSTOOLS=ON``, you either need to add the
+CGNS library sometimes complains about missing includes and libraries. 
+Most of the time this is either Tk/TCL or OpenGL. This can be solved by 
+installing freeglut3, tk8.6-dev (,freeglut3-dev, if needed). 
+Note that the version of these libraries might be different on your machine.
+
+.. code-block:: bash
+   :linenos:
+   
+   cd CGNS-4.1.2
+   cd build
+   cmake .. -DCGNS_ENABLE_FORTRAN=1 \
+   -DCMAKE_INSTALL_PREFIX=$HOME/opt/CGNS-4.1.2/opt-gfortran -DCGNS_BUILD_CGNSTOOLS=1
+
+   make
+   make install
+
+If you compiled with ``-D CGNS_BUILD_CGNSTOOLS=1``, you either need to add the
 binary path to your PATH environmental variable or you can install the binaries 
 system wide. By specifying the installation prefix as shown in the example 
 configure commands above, the binary path is in your PATH environmental variables;
 without specifying the prefix, the default is a system path, which requires sudo.
-
 
