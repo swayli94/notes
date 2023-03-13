@@ -25,6 +25,16 @@ Windows CMD 命令
    # 关闭 WSL
    wsl --shutdown
 
+   # 进入 root 用户（管理员权限运行）
+   wsl --user root
+
+
+对 Linux GUI 应用的安装支持
+
+https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps
+
+
+
 Linux 命令
 
 .. code-block:: bash

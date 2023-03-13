@@ -46,7 +46,7 @@ Python CGNS 接口：
 安装 CGNS 工具 (Optional)
 ------------------------------
 
-CGNS 提供了一系列在本地（非集群）查看、编辑 CGNS 文件的工具，需要先安装以下包，再配置 CGNS
+CGNS 提供了一系列在本地（非集群）查看、编辑 CGNS 文件的工具，需要先安装以下包，再配置 CGNS。
 
 .. code-block:: bash
 

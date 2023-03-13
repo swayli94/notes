@@ -1,14 +1,6 @@
 简介
 ====================
 
-The `CFD General Notation System (CGNS) <https://cgns.github.io/>`_ 
-provides a general, portable, and extensible standard for the 
-storage and retrieval of computational fluid dynamics (CFD) analysis data. 
-
-.. seealso::
-
-    `A User's Guide to CGNS <https://cgns.github.io/CGNS_docs_current/user/index.html>`_
-
 
 (1) 数据类型
 --------------------------------------
