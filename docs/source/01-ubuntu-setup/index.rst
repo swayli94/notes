@@ -10,7 +10,8 @@
     04-openmpi/contents
     05-petsc/contents
     06-cgns/contents
-    07-sphinx/contents
-    08-doxygen/contents
-    09-git/contents
+    07-pyHyp/index
+    08-sphinx/index
+    09-doxygen/contents
+    10-git/contents
 
