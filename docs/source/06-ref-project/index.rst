@@ -4,6 +4,7 @@
 .. toctree::
     :maxdepth: 2
 
-    01-geosx/contents
+    01-cfl3d/index
+    02-geosx/index
 
 
