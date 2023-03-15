@@ -27,4 +27,5 @@
    sudo apt-get install libxt-dev libscotch-dev libcgal-dev 
    sudo apt-get install libibverbs-dev ca-certificates  
    sudo apt-get install libxml2-utils
+   sudo apt-get install libhdf5-dev
 

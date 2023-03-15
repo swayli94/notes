@@ -32,6 +32,7 @@
 
     # 自动更新 html 文件
     sphinx-autobuild source build/html
+    sphinx-autobuild source build/html --port=0
 
     # 自动更新 html 文件 (在 project1&2 路径下，同时打开多个项目)
     sphinx-autobuild --port=0 --open-browser project1/docs project1/docs/build/html

@@ -9,34 +9,41 @@ storage and retrieval of computational fluid dynamics (CFD) analysis data.
 <https://mdolab-mach-aero.readthedocs-hosted.com/en/latest/installInstructions/install3rdPartyPackages.html>`_
 
 
+安装 HDF5
+--------------------
+
+.. code-block:: bash
+
+    sudo apt-get install libhdf5-dev
+
+
 安装过程
 --------------------
 
 .. code-block:: bash
-   :linenos:
-   
-   # unzip in the package directory, e.g., $HOME/opt/
-   cd ~/opt/
-   wget https://github.com/CGNS/CGNS/archive/v4.1.2.tar.gz
-   tar -xvaf v4.1.2.tar.gz
 
-   # 安装路径为当前路径
-   cd CGNS-4.1.2
-   mkdir -p build
-   cd build
-   cmake .. -DCGNS_ENABLE_FORTRAN=1 \
-   -DCMAKE_INSTALL_PREFIX=$HOME/opt/CGNS-4.1.2/opt-gfortran -DCGNS_BUILD_CGNSTOOLS=0
+    # unzip in the package directory, e.g., $HOME/opt/
+    cd ~/opt/
+    wget https://github.com/CGNS/CGNS/archive/refs/tags/v4.3.0.tar.gz
+    tar -xvaf v4.3.0.tar.gz
 
-   make
-   make install
+    # 安装路径为当前路径
+    cd CGNS-4.3.0
+    mkdir -p build
+    cd build
+    cmake .. -DCGNS_ENABLE_FORTRAN=1 \
+    -DCMAKE_INSTALL_PREFIX=$HOME/opt/CGNS-4.3.0/opt-gfortran -DCGNS_BUILD_CGNSTOOLS=0
 
-   # Add environment variables
-   echo '# CGNS-4.1.2' >> $HOME/.bashrc
-   echo 'export CGNS_HOME=$HOME/opt/CGNS-4.1.2/opt-gfortran' >> $HOME/.bashrc
-   echo 'export PATH=$PATH:$CGNS_HOME/bin' >> $HOME/.bashrc
-   echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CGNS_HOME/lib' >> $HOME/.bashrc
-   echo ' ' >> $HOME/.bashrc
-   source ~/.bashrc
+    make
+    make install
+
+    # Add environment variables
+    echo '# CGNS-4.3.0' >> $HOME/.bashrc
+    echo 'export CGNS_HOME=$HOME/opt/CGNS-4.3.0/opt-gfortran' >> $HOME/.bashrc
+    echo 'export PATH=$PATH:$CGNS_HOME/bin' >> $HOME/.bashrc
+    echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CGNS_HOME/lib' >> $HOME/.bashrc
+    echo ' ' >> $HOME/.bashrc
+    source ~/.bashrc
 
 Python CGNS 接口：
 
@@ -50,11 +57,11 @@ CGNS 提供了一系列在本地（非集群）查看、编辑 CGNS 文件的工
 
 .. code-block:: bash
 
-   sudo apt-get install libxmu-dev libxi-dev
+    sudo apt-get install libxmu-dev libxi-dev
 
-   sudo apt-get install freeglut3
-   sudo apt-get install tk8.6-dev
-   sudo apt-get install freeglut3-dev
+    sudo apt-get install freeglut3
+    sudo apt-get install tk8.6-dev
+    sudo apt-get install freeglut3-dev
 
 CGNS library sometimes complains about missing includes and libraries. 
 Most of the time this is either Tk/TCL or OpenGL. This can be solved by 
@@ -62,15 +69,14 @@ installing freeglut3, tk8.6-dev (,freeglut3-dev, if needed).
 Note that the version of these libraries might be different on your machine.
 
 .. code-block:: bash
-   :linenos:
-   
-   cd CGNS-4.1.2
-   cd build
-   cmake .. -DCGNS_ENABLE_FORTRAN=1 \
-   -DCMAKE_INSTALL_PREFIX=$HOME/opt/CGNS-4.1.2/opt-gfortran -DCGNS_BUILD_CGNSTOOLS=1
 
-   make
-   make install
+    cd CGNS-4.3.0
+    cd build
+    cmake .. -DCGNS_ENABLE_FORTRAN=1 \
+    -DCMAKE_INSTALL_PREFIX=$HOME/opt/CGNS-4.3.0/opt-gfortran -DCGNS_BUILD_CGNSTOOLS=1
+
+    make
+    make install
 
 If you compiled with ``-D CGNS_BUILD_CGNSTOOLS=1``, you either need to add the
 binary path to your PATH environmental variable or you can install the binaries 
