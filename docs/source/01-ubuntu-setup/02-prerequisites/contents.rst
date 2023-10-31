@@ -29,3 +29,6 @@
    sudo apt-get install libxml2-utils
    sudo apt-get install libhdf5-dev
 
+   # 安装 CUDA
+   sudo apt install nvidia-cuda-toolkit
+   nvcc -V
