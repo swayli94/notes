@@ -29,6 +29,17 @@
    sudo apt-get install libxml2-utils
    sudo apt-get install libhdf5-dev
 
+   # 查看 内核驱动版本
+   cat /proc/driver/nvidia/version
+
+   # 查看 NVIDIA 驱动版本
+   sudo dpkg --list | grep nvidia-*
+
+   # 禁用 NVIDIA 当前版本的本地更新
+   sudo apt-mark hold nvidia-driver-535-server
+
    # 安装 CUDA
    sudo apt install nvidia-cuda-toolkit
    nvcc -V
+
+
